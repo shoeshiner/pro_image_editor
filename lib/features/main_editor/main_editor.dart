@@ -443,6 +443,14 @@ class ProImageEditorState extends State<ProImageEditor>
         // ? SystemUiOverlayStyle.light
         // : SystemUiOverlayStyle.dark);
     // SystemChrome.restoreSystemUIOverlays();
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+            systemNavigationBarColor: Color.fromARGB(35, 0, 0, 0),
+            systemNavigationBarIconBrightness: Brightness.light,
+            systemStatusBarContrastEnforced: true,
+        ),
+    );
     ServicesBinding.instance.keyboard.removeHandler(_onKeyEvent);
     if (kIsWeb && _browserContextMenuBeforeEnabled) {
       BrowserContextMenu.enableContextMenu();
